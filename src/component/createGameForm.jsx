@@ -1,6 +1,6 @@
 import { TextField, Button, InputAdornment } from "@mui/material";
 import short from "short-uuid";
-import ShareButton from "./shareButton.js";
+import ShareButton from "./shareButton";
 import { useState, useEffect } from "react";
 
 const CreateGameForm = ({ joinExistingGame, setCreatedGameId }) => {

@@ -2,7 +2,7 @@ import styles from "./landing.module.css";
 import { useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
-import CreateGameForm from "./component/createGameForm.js";
+import CreateGameForm from "./component/createGameForm";
 import JoinGameForm from "./component/joinGameForm";
 
 function LandingPage({ socket, setRoomId, setCreatedGameId }) {

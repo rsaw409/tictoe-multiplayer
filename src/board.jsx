@@ -10,9 +10,9 @@ import {
   getFontColor,
   getThisPlayerName,
   getOtherPlayerName,
-} from "./utilFunctions.js";
+} from "./utilFunctions";
 import styles from "./board.module.css";
-import ShareButton from "./component/shareButton.js";
+import ShareButton from "./component/shareButton";
 
 function Board({ users, leaveGame, socket, gameId, createdGameId }) {
   const mySwal = withReactContent(Swal);
@@ -269,7 +269,7 @@ function Board({ users, leaveGame, socket, gameId, createdGameId }) {
                 key={itemIndex}
                 className={`${styles.item} ${getCornerClassName(
                   rowIndex,
-                  itemIndex
+                  itemIndex,
                 )} ${getFontColor(item)} ${getBackGroundColor([
                   rowIndex,
                   itemIndex,
