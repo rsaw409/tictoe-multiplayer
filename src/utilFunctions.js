@@ -1,18 +1,8 @@
-import styles from "./board.module.css";
-
 export const getCornerClassName = (rowIndex, itemIndex) => {
-  if (rowIndex === 0 && itemIndex === 0) return styles.item1;
-  if (rowIndex === 0 && itemIndex === 2) return styles.item2;
-  if (rowIndex === 2 && itemIndex === 0) return styles.item3;
-  if (rowIndex === 2 && itemIndex === 2) return styles.item4;
-
   return "";
 };
 
 export const getFontColor = (item) => {
-  if (item === "X") return styles.fontColor1;
-  if (item === "0") return styles.fontColor2;
-
   return "";
 };
 
@@ -127,15 +117,19 @@ export function isNoOneWonFn(board) {
 }
 
 export const getThisPlayerName = (userId, users) => {
-  for (let uid of Object.keys(users)) {
-    if (uid === userId) return { userId: userId, userName: users[uid] };
+  if (users && typeof users === "object") {
+    for (let uid of Object.keys(users)) {
+      if (uid === userId) return { userId: userId, userName: users[uid] };
+    }
   }
-  return "NA";
+  return { userId: userId || "", userName: "You" };
 };
 
 export const getOtherPlayerName = (userId, users) => {
-  for (let uid of Object.keys(users)) {
-    if (uid !== userId) return { userId: userId, userName: users[uid] };
+  if (users && typeof users === "object") {
+    for (let uid of Object.keys(users)) {
+      if (uid !== userId) return { userId: uid, userName: users[uid] };
+    }
   }
-  return "NA";
+  return { userId: "", userName: "Waiting..." };
 };

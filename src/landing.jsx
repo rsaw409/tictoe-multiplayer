@@ -34,6 +34,17 @@ function LandingPage({ socket, setRoomId, setCreatedGameId }) {
 
   return (
     <div className={styles.wrapper}>
+      <header className={styles.heroHeader}>
+        <div className={styles.badge}>
+          <span className={styles.badgeDot}></span>
+          Real-Time 1v1 Multiplayer
+        </div>
+        <h1 className={styles.title}>TicTac Arena</h1>
+        <p className={styles.subtitle}>
+          Create a room, share the unique link with your rival, and claim victory in real-time.
+        </p>
+      </header>
+
       <div className={styles.container}>
         {gameIdFromUrl.length ? (
           <div className={styles.item}>
@@ -51,8 +62,17 @@ function LandingPage({ socket, setRoomId, setCreatedGameId }) {
           </div>
         )}
       </div>
+
+      <footer className={styles.footerNotes}>
+        <div className={styles.featureTag}>⚡ Low Latency Sockets</div>
+        <span>•</span>
+        <div className={styles.featureTag}>🔒 Instant Link Sharing</div>
+        <span>•</span>
+        <div className={styles.featureTag}>🎮 Seamless 1v1 Matchmaking</div>
+      </footer>
     </div>
   );
 }
 
 export default LandingPage;
+
